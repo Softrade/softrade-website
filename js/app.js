@@ -274,7 +274,7 @@ Home = React.createClass({
       "imageUrl": (window.__basename__ || "") + "/img/contactBackground1.jpg"
     }, React.createElement(components.elements.Centerize, null, React.createElement("h3", {
       "style": style.subtitleWhite
-    }, "Want to collaborate? Write to us or give us a shout!"), React.createElement("div", {
+    }, "Want to collaborate? Write to us!"), React.createElement("div", {
       "style": {
         textAlign: "center"
       }
@@ -289,18 +289,7 @@ Home = React.createClass({
       "style": {
         marginLeft: "0.25rem"
       }
-    }, " Email ")), React.createElement(components.elements.LinkButton, {
-      "href": "tel:+918028444937",
-      "style": {
-        backgroundColor: "white"
-      }
-    }, React.createElement("i", {
-      "className": "fa fa-phone fa-lg"
-    }), React.createElement("span", {
-      "style": {
-        marginLeft: "0.25rem"
-      }
-    }, " Call ")))))));
+    }, " Email ")))))));
   }
 });
 
