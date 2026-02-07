@@ -31,9 +31,13 @@ routes = React.createElement(Route, {
   "component": components.Projects
 }));
 
+var basename = window.location.pathname.startsWith('/softrade-website') ? '/softrade-website' : '';
+window.__basename__ = basename;
+
 ReactDOM.render(React.createElement(Router, {
   "routes": routes,
-  "history": browserHistory
+  "history": browserHistory,
+  "basename": basename
 }), document.getElementById("app-container"));
 
 
@@ -226,7 +230,7 @@ Home = React.createClass({
       "className": "cf",
       "style": style.titleContainer
     }, React.createElement(components.elements.FadeInBackground, {
-      "imageUrl": "/img/landingBackground1.jpg"
+      "imageUrl": (window.__basename__ || "") + "/img/landingBackground1.jpg"
     }, React.createElement(components.elements.Centerize, null, React.createElement("div", {
       "className": "cf",
       "style": style.titleLogo
@@ -234,14 +238,14 @@ Home = React.createClass({
       "style": {
         height: "100%"
       },
-      "src": "/img/SoftradeLogoWhite.png"
+      "src": (window.__basename__ || "") + "/img/SoftradeLogoWhite.png"
     })), React.createElement("h3", {
       "style": style.subtitleWhite
     }, "We help transform businesses by building powerful\ncustomized software products using cutting edge technologies.")))), React.createElement("div", {
       "className": "cf",
       "style": style.titleContainer
     }, React.createElement(components.elements.FadeInBackground, {
-      "imageUrl": "/img/webBackground1.jpg"
+      "imageUrl": (window.__basename__ || "") + "/img/webBackground1.jpg"
     }, React.createElement(components.elements.Centerize, null, React.createElement("h2", {
       "style": style.titleWhite
     }, "Web \& Mobile"), React.createElement("h3", {
@@ -250,7 +254,7 @@ Home = React.createClass({
       "className": "cf",
       "style": style.titleContainer
     }, React.createElement(components.elements.FadeInBackground, {
-      "imageUrl": "/img/platformsBackground1.jpg"
+      "imageUrl": (window.__basename__ || "") + "/img/platformsBackground1.jpg"
     }, React.createElement(components.elements.Centerize, null, React.createElement("h2", {
       "style": style.titleWhite
     }, "Platforms"), React.createElement("h3", {
@@ -259,7 +263,7 @@ Home = React.createClass({
       "className": "cf",
       "style": style.titleContainer
     }, React.createElement(components.elements.FadeInBackground, {
-      "imageUrl": "/img/experienceBackground1.jpg"
+      "imageUrl": (window.__basename__ || "") + "/img/experienceBackground1.jpg"
     }, React.createElement(components.elements.Centerize, null, React.createElement("h2", {
       "style": style.titleWhite
     }, "28 Years of Experience"), React.createElement("h3", {
@@ -268,7 +272,7 @@ Home = React.createClass({
       "className": "cf",
       "style": style.titleContainer
     }, React.createElement(components.elements.FadeInBackground, {
-      "imageUrl": "/img/contactBackground1.jpg"
+      "imageUrl": (window.__basename__ || "") + "/img/contactBackground1.jpg"
     }, React.createElement(components.elements.Centerize, null, React.createElement("h3", {
       "style": style.subtitleWhite
     }, "Want to collaborate? Write to us or give us a shout!"), React.createElement("div", {
@@ -341,7 +345,7 @@ module.exports = Navigation = React.createClass({
       }, React.createElement(Link, {
         "to": "/"
       }, React.createElement("img", {
-        "src": "/img/SoftradeLogoWithText.png",
+        "src": (window.__basename__ || "") + "/img/SoftradeLogoWithText.png",
         "style": {
           height: "54px",
           padding: "3px",
