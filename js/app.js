@@ -15,29 +15,28 @@ AppWithoutRadium = React.createClass({
 
 App = Radium(AppWithoutRadium);
 
+var basename = window.location.pathname.startsWith('/softrade-website') ? '/softrade-website' : '';
+window.__basename__ = basename;
+
 routes = React.createElement(Route, {
   "name": "app",
-  "path": "/",
+  "path": basename + "/",
   "component": App
 }, React.createElement(IndexRoute, {
   "component": components.Home
 }), React.createElement(Route, {
   "name": "team",
-  "path": "/team",
+  "path": basename + "/team",
   "component": components.Team
 }), React.createElement(Route, {
   "name": "projects",
-  "path": "/projects",
+  "path": basename + "/projects",
   "component": components.Projects
 }));
 
-var basename = window.location.pathname.startsWith('/softrade-website') ? '/softrade-website' : '';
-window.__basename__ = basename;
-
 ReactDOM.render(React.createElement(Router, {
   "routes": routes,
-  "history": browserHistory,
-  "basename": basename
+  "history": browserHistory
 }), document.getElementById("app-container"));
 
 
